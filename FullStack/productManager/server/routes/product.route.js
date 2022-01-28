@@ -2,12 +2,12 @@
 const ProductController = require("../controllers/product.controller")
 
 module.exports = (app)=>{
-    app.get("/api/hello", ProductController.sayHello);
+    app.get("/hello", ProductController.sayHello);
     //come here to set up route after controller
-    app.get('/api/product', ProductController.findAllProducts);
-    app.get('/api/product/:id', ProductController.findOneSingleProduct);
-    app.put('/api/product/:id', ProductController.updateExistingProduct);
-    app.post('/api/product', ProductController.createNewProduct);
-    app.delete('/api/product/:id', ProductController.deleteAnExistingProduct);
+    app.get('/', ProductController.findAllProducts);
+    app.get('/:id', ProductController.findOneSingleProduct);
+    app.put('/:id', ProductController.updateExistingProduct);
+    app.post('/', ProductController.createNewProduct);
+    app.delete('/:id', ProductController.deleteAnExistingProduct);
     
 }

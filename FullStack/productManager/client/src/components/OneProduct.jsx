@@ -21,15 +21,15 @@ const OneProduct = (props) => {
         .catch(err=> console.log(err))
     }, [])
 
-    // const deleteProduct = ()=>{
-    //     console.log("deleting!!!")
-    //     axios.delete(`http://localhost:8000/${id}`)
-    //         .then(res=>{
-    //             console.log("response when deleting", res)
-    //             history.push("/")
-    //         })
-    //         .catch(err=>console.log(err))
-    // }
+    const deleteProduct = ()=>{
+        console.log("deleting!!!")
+        axios.delete(`http://localhost:8000/${id}`)
+            .then(res=>{
+                console.log("response when deleting", res)
+                history.push("/")
+            })
+            .catch(err=>console.log(err))
+    }
 
     return (
         <div>
@@ -39,7 +39,7 @@ const OneProduct = (props) => {
             <p>Price $: {productDetails.price}</p>
             <p>ID: {id}</p>
             {/* <p>Veteran status: {ninjaDetails.isVeteran? "Is a Veteran": "Not a Veteran"}</p> */}
-            {/* <button onClick = {deleteNinja}>Delete</button> */}
+            <button onClick = {deleteProduct}>Delete</button>
         </div>
         
     );

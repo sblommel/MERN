@@ -7,7 +7,7 @@ import{
 } from "react-router-dom";
 import AllProducts from './components/AllProducts';
 import OneProduct from './components/OneProduct';
-// import EditProduct from './components/EditProduct';
+import EditProduct from './components/EditProduct';
 import React, {useState} from 'react';
 
 // collect info from FORM when form submits, using axios to create new info
@@ -39,10 +39,10 @@ function App() {
             <Route exact path = "/:id">
               <OneProduct></OneProduct>
             </Route>
-            {/* <Route exact path = "/product/edit/:id">
+            <Route exact path = "/edit/:id">
               <EditProduct></EditProduct>
-            </Route>  */}
-          </Switch> 
+            </Route>  
+            </Switch> 
         
       </div>
     </BrowserRouter>

@@ -21,9 +21,9 @@ const AllProducts = (props) =>{
 
 },[deleted, props.newProductAdded])
 
-//function runs when delete button is clicked and it will accept the id of the ninja to be deleted
+//function runs when delete button is clicked and it will accept the id of the product to be deleted
 const deleteProduct =(productId)=>{
-    //axios deletes request to the backend to delete a ninja by id
+    //axios deletes request to the backend to delete a product by id
     axios.delete(`http://localhost:8000/${productId}`)
         .then(res=>{
             console.log("res when deleting", res)
@@ -39,8 +39,8 @@ const deleteProduct =(productId)=>{
         <h1> All Product List </h1>
         {allProducts.map((productObj, i)=>{
         return(
-            <div key ={i}> 
-            {/* <div key ={i} style = {{border: "1px solid black"}}> */}
+             
+            <div key ={i} style = {{border: "1px solid black"}}>
                 {/* <p>Product: {productObj.title}</p>  */}
                 {/* <p>Description: {productObj.description}</p>
                 <p>Price $: {productObj.price}</p>
@@ -48,8 +48,8 @@ const deleteProduct =(productId)=>{
                 
                 <p><Link to={`/${productObj._id}`}>{productObj.title}</Link></p>
                 {/* <p><button><Link to={`/${productObj._id}`}>Details</Link></button></p> */}
-                {/* <p><button><Link to={`/edit/${productObj._id}`}>Edit</Link></button></p>
-                <button onClick= {()=>deleteProduct(productObj._id)}>Delete Product</button> */}
+                <p><button><Link to={`/edit/${productObj._id}`}>Edit Product</Link></button></p>
+                <button onClick= {()=>deleteProduct(productObj._id)}>Delete Product</button>
             </div>
         )
         })}
