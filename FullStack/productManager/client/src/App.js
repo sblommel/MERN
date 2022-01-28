@@ -5,8 +5,8 @@ import{
   Route,
   Link
 } from "react-router-dom";
-// import AllProducts from './components/AllProduct';
-// import OneProduct from './components/OneProduct';
+import AllProducts from './components/AllProducts';
+import OneProduct from './components/OneProduct';
 // import EditProduct from './components/EditProduct';
 import React, {useState} from 'react';
 
@@ -22,24 +22,26 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App container">
-        <h1>Product Info!</h1>
+        
          {/* <Link to ="/new"><button>Add Product</button></Link> */}
           <Switch>
             <Route exact path= "/">
+            <h1>Product Info!</h1>
               <NewProductForm></NewProductForm>
               {/* <NewNinjaForm newNinjaAdded={newNinjaAdded} setNewNinjaAdded={setNewNinjaAdded}></NewNinjaForm> */}
               <hr />
+              <AllProducts></AllProducts>
               {/* <AllNinjas newNinjaAdded={newNinjaAdded}></AllNinjas> */}
             </Route>
             {/* <Route exact path = "/new">--this for going to new page to enter in new person
               <NewProductForm></NewProductForm>
-            </Route>
-            <Route exact path = "/product/:id">
+            </Route> */}
+            <Route exact path = "/:id">
               <OneProduct></OneProduct>
             </Route>
-            <Route exact path = "/product/edit/:id">
+            {/* <Route exact path = "/product/edit/:id">
               <EditProduct></EditProduct>
-            </Route> */}
+            </Route>  */}
           </Switch> 
         
       </div>
