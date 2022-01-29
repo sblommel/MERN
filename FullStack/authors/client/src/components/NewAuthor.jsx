@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const NewAuthor = (props)=>{
 
@@ -46,7 +47,7 @@ const NewAuthor = (props)=>{
     return(
         <div>
             <form onSubmit= {createAuthorSubmitHandler}>
-                <div className="form-group">
+                <div className="form-group" button type="button" button class="btn btn-secondary">
                 <label htmlFor="">Author Name</label>
                 <input  onChange = {(e) =>{setAuthorName(e.target.value)}} type="text" name=""/>
                 <p className="text-danger">{formErrors.authorName? formErrors.authorName.message : ""}</p> 
@@ -65,7 +66,8 @@ const NewAuthor = (props)=>{
                     <label htmlFor="">Is Ninja a Veteran?</label>
                     <input onChange = {(e)=>{setIsVeteran(e.target.checked)}} type="checkbox" name="" id="" className="form-checkbox" />
                 </div> */}
-                <button>Submit</button>
+                <Link to ="/"><button class="btn btn-primary">Cancel</button></Link>
+                <button class="btn btn-primary">Submit</button>
                 {/* <input type="submit" value="Create Author!" className="btn btn-success mt-3" /> */}
             </form>
             

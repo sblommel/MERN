@@ -40,16 +40,23 @@ const deleteAuthor =(authorId)=>{
         {allAuthors.map((authorObj, i)=>{
         return(
              
-            <div key ={i} style = {{border: "1px solid black"}}>
-                {/* <p>Product: {productObj.title}</p>  */}
-                {/* <p>Description: {productObj.description}</p>
-                <p>Price $: {productObj.price}</p>
-                <p>Id: {productObj._id}</p> */}
+            <div key ={i}>
                 {/* <p><Link to={`/${authorObj._id}`}>{authorObj.authorName}</Link></p> */}
                 {/* <p><button><Link to={`/${authorObj._id}`}>Details</Link></button></p> */}
-                <p>{authorObj.authorName}</p>
+                <table style = {{border: "1px solid black"}}>
+                    <tr>
+                        <th>Author</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>{authorObj.authorName}</td>
+                        <td><button><Link to={`/edit/${authorObj._id}`}>Edit Author</Link></button></td>
+                        <td><button class="btn btn-danger" onClick= {()=>deleteAuthor(authorObj._id)}>Delete Author</button></td>
+                    </tr>    
+                {/* <p>{authorObj.authorName}</p>
                 <p><button><Link to={`/edit/${authorObj._id}`}>Edit Author</Link></button></p>
-                <button onClick= {()=>deleteAuthor(authorObj._id)}>Delete Author</button>
+                <button onClick= {()=>deleteAuthor(authorObj._id)}>Delete Author</button> */}
+                </table>
             </div>
         )
         })}

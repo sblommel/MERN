@@ -38,11 +38,11 @@ function App() {
               {/* <AllNinjas newNinjaAdded={newNinjaAdded}></AllNinjas> */}
             </Route>
             <Route exact path = "/new"> 
-            <Link to ="/"><button>Home</button></Link>
+            <Link to ="/">Home</Link>
             <h1>Add New Author</h1>
             {/* --this for going to new page to enter in new person */}
               <NewAuthor></NewAuthor>
-              <Link to ="/"><button>Cancel</button></Link>
+              {/* <Link to ="/"><button>Cancel</button></Link>--this always stays on route  */}
                 {/*goes back to home page the above link  */}
             </Route>
             {/* <Route exact path = "/:id">
