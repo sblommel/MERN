@@ -11,7 +11,7 @@ const PokemonAxios = ()=>{
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=1000")
         
             .then(response=>{
-            console.log("Response from API", response.data)
+            console.log("Response from API", response)
             setListOfPokemon(response.data.results)
             // With axios need only 1 .then statement and we have to have response.data as well.
         })
@@ -19,6 +19,18 @@ const PokemonAxios = ()=>{
         .catch(err=>{
             console.log("error", err)
         })
+
+        // axios.get("https://pokeapi.co/api/v2/pokemon?limit=1000")
+        
+        //     .then(function(response){
+        //     console.log("Response from API", response.data)
+        //     setListOfPokemon(response.data.results)
+        //     // With axios need only 1 .then statement and we have to have response.data as well.
+        // })
+
+        // .catch(err=>{
+        //     console.log("error", err)
+        // })
     }
 
     return(
